@@ -24,7 +24,7 @@ app.directive("treeView", ["$compile", function ($compile) {
         element.append("<div ng-repeat='item in nodes' >" +
             "<p class='item-key' ng-click='hide=!hide' ng-class=\"{true: 'has-key', false: 'not-has-key'}[item.KV!=undefined]\">{{ item.RootPath}}</p>" +
             "<p ng-if='item.KV != undefined' class='item-value'><button item-detail class='btn btn-primary btn-xs' kv='item.KV'>view</button></p>" +
-            "<div ng-show='hide==true' ng-if='hasNodes(item.Nodes)' style='margin-left:16px'><tree-view nodes='item.Nodes'></tree-view></div>" +
+            "<div ng-show='true' ng-if='hasNodes(item.Nodes)' style='margin-left:16px'><tree-view nodes='item.Nodes'></tree-view></div>" +
             "</div>"
         );
         $compile(element.contents())(scope);
